@@ -1,0 +1,17 @@
+*{
+  background-color:  #24364C;
+  margin: 0;
+  padding: 0;
+  height: 10vmin;
+  /* max-width: 80%; */
+}
+
+a{
+  color: white;
+}
+
+div{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
