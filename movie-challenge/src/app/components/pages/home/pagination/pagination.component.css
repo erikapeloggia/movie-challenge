@@ -1,0 +1,16 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+nav{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: solid green;
+}
+
+.selected-page {
+  background-color: #007bff; /* Cor de fundo azul para o botão selecionado */
+  color: #fff; /* Cor do texto branco para o botão selecionado */
+}
