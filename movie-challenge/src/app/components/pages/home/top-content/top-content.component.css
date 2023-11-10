@@ -1,0 +1,43 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+#filtering{
+  display: grid;
+  grid-template-columns: 0.2fr 0.2fr 1fr;
+  grid-template-areas: "filter order search";
+  padding: 10px;
+  max-width: 96.5%;
+}
+
+select {
+  background-color: #24364C;
+  color: #f2f2f2;
+  border: 1px solid #f2f2f2; /* Adiciona uma borda de 1px sólida de cor preta */
+  border-radius: 5px;
+  padding: 5px; /* Adiciona espaço interno para separar a borda do texto */
+  margin: 0 10px 0 2px;
+}
+
+#filter{
+  display: grid;
+  grid-area: filter;
+}
+
+#order{
+  display: grid;
+  grid-area: order;
+}
+
+#search-container{
+  display: flex;
+  justify-content: flex-end;
+}
+
+#search{
+  display: grid;
+  grid-area: search;
+  max-width: 40%;
+  border-radius: 5px;
+}
