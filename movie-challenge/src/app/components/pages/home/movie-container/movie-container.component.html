@@ -1,0 +1,25 @@
+<!-- <p>movie-container works!</p> -->
+<!-- <div class="container"> -->
+<!-- </div> -->
+
+<!-- <div id="movieContainer">
+  <div id="cards" *ngFor="let movie of movies">
+    <img id="poster" src="https://image.tmdb.org/t/p/w200/{{movie.poster_path}}" alt="{{movie.title}}">
+    <h3 id="title">{{movie.title}}</h3>
+    <h3 id="date">{{movie.release_date | date: 'yyyy'}}</h3>
+  </div>
+</div> -->
+
+<div class="container">
+  <div id="movieContainer">
+    <div id="cards" *ngFor="let movie of movies">
+      <!-- <div id="poster"> -->
+        <img class="card-img-top" src="https://image.tmdb.org/t/p/w200/{{movie.poster_path}}" alt="{{movie.title}}">
+        <div id="card-body">
+          <h3 id="title">{{movie.title}}</h3>
+          <h3 id="date">{{movie.release_date | date: 'yyyy'}}</h3>
+        <!-- </div> -->
+      </div>  
+    </div>
+  </div>
+</div>
