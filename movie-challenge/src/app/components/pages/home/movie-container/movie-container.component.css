@@ -7,21 +7,21 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border: solid pink;
   max-width: 100%;
+  /* border: solid pink; */
 }
 
 #movieContainer {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  /* gap: 5px; */
+  gap: 5px;
   background-color: #24364C;
   border-radius: 1vmin;
   max-width: 90%;
   margin: 0 2vmin;
-  align-items: center;
-  justify-content: center;
-  border: solid orange;
+  /* align-items: center; */
+  /* justify-content: center; */
+  /* border: solid orange; */
 }
 
 #cards {
@@ -30,14 +30,26 @@
   justify-content: center;
   align-items: center;
   padding: 10px;
-  border: solid yellow;
+  /* border: solid yellow; */
 }
 
-.card-img-top {
+.card-img-top, .notFound{
   max-width: 80%;
   border-radius: 2vmin;
   height: auto;
-  border: solid purple;
+  /* border: solid purple; */
+}
+
+.card-img-top:hover, .notFound:hover {
+  transform: scale(1.1);
+  transition: ease;
+  transition: 0.5s;
+}
+
+.linkID, .ifImage{
+  display: flex;
+  justify-content: center;
+  /* border: solid red; */
 }
 
 #title, #date {
@@ -54,7 +66,7 @@
 #card-body {
   width: 100%;
   height: 100%;
-  border: solid red;
+  /* border: solid red; */
   flex-direction: column;
 }
 

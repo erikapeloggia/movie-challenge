@@ -3,12 +3,20 @@
   padding: 0;
 }
 
-#filtering{
+.topContent{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* border: solid pink; */
+  max-width: 100%;
+}
+
+.filtering{
   display: grid;
-  grid-template-columns: 0.2fr 0.2fr 1fr;
+  grid-template-columns: 1fr 1fr 5fr;
   grid-template-areas: "filter order search";
-  padding: 10px;
-  max-width: 96.5%;
+  padding: 10px 0px;
+  max-width: 90%;
 }
 
 select {
@@ -20,24 +28,50 @@ select {
   margin: 0 10px 0 2px;
 }
 
-#filter{
+.filter{
   display: grid;
   grid-area: filter;
 }
 
-#order{
+.order{
   display: grid;
   grid-area: order;
 }
 
-#search-container{
+.searchGrid{
   display: flex;
   justify-content: flex-end;
 }
 
-#search{
+.searchContainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  background-color: #24364C;
+  border: 1px solid #f2f2f2; /* Adiciona uma borda de 1px sólida de cor preta */
+  max-width: 30%;
+  /* border: solid brown; */
+}
+
+.search{
   display: grid;
   grid-area: search;
-  max-width: 40%;
-  border-radius: 5px;
+  max-width: 80%;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  padding: 5px 0px;
+  color: #f2f2f2;
+}
+
+.searchIcon{
+  color: #f2f2f2;
+  width: 20px;
+  height: 20px;
+  /* border: solid black; */
+}
+
+.search::placeholder{
+  color: #f2f2f2;
 }

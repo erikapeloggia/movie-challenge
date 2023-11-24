@@ -1,12 +1,45 @@
 <!-- <p>top-content works!</p> -->
-<div id="filtering">
-  <select id="filter">
-    <option value="">Filter by Genre</option>
-  </select>
-  <select id="order">
-    <option value="">Alphabetical Order</option>
-  </select>
-  <div id="search-container">
-    <input id="search" type="text" placeholder="Search your movie" />
+<!-- <div class="topContent">
+  <div class="filtering">
+    <select class="filter">
+      <option value="">Filter by Genre</option>
+      <option *ngFor="let genre of genres" [value]="genre.id">{{genre.name}}</option>
+    </select>
+
+    <select class="filter">
+      <option *ngFor="let genre of genres" [value]="genre.id">{{genre.name}}</option>
+    </select>
+
+    <select class="order">
+      <option value="">Order by</option>
+      <option [value]="orders">Highest popularity</option>
+    </select>
+    <div class="searchGrid">
+      <div class="searchContainer">
+        <input class="search" type="text" placeholder="Search your movie" />
+        <img class="searchIcon" src="/assets/search.png" alt="Search Icon">
+      </div>
+    </div>
+  </div>
+</div>   -->
+
+<div class="topContent">
+  <div class="filtering">
+    <select class="filter" [(ngModel)]="selectedGenre" (change)="optionsChange()">
+      <option value="0">Filter by Genre</option>
+      <option *ngFor="let genre of genres" [value]="genre.id">{{genre.name}}</option>
+    </select>
+    <select class="order" [(ngModel)]="selectedOrder" (change)="optionsChange()">
+      <option *ngFor="let order of orderByList" [value]="order.order">{{order.text}}</option>
+    </select>
+    <div class="searchGrid">
+      <div class="searchContainer">
+        <input class="search" type="search" [(ngModel)]="keyWord" placeholder="Search your movie" (input)="optionsChange()"/> 
+        <img class="searchIcon" src="/assets/search.png" alt="Search Icon">
+      </div>
+    </div>
   </div>
 </div>
+
+
+<!--(input)="searchMovies(term: string)"-->

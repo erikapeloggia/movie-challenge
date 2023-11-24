@@ -7,6 +7,7 @@ import { TmdbService } from 'src/app/services/tmdb/tmdb.service';
 import { TopContentComponent } from './top-content/top-content.component';
 import { PaginationComponent } from './pagination/pagination.component';
 import { MovieContainerComponent } from './movie-container/movie-container.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { MovieContainerComponent } from './movie-container/movie-container.compo
   ],
   imports: [
     CommonModule,
-    HomeRoutingModule
+    HomeRoutingModule,
+    FormsModule
   ],
   exports: [
     HomeComponent

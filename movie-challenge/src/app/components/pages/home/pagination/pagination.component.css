@@ -7,10 +7,37 @@ nav{
   display: flex;
   justify-content: center;
   align-items: center;
-  border: solid green;
+  padding: 10px;
+  /* border: solid green;  */
+}
+
+.pagination{
+  display: flex;
+  flex-direction: row;
+  /* border: solid red;  */
+}
+
+.page-item{
+  padding: 5px;
+  background-color: #24364C;
+  /* border: solid green; */
+}
+
+.page-link{
+  color: #f2f2f2;
+  background-color: #24364C;
+  cursor: pointer;
+  border: none;
+  /* border: solid yellow; */
 }
 
 .selected-page {
-  background-color: #007bff; /* Cor de fundo azul para o botão selecionado */
+  padding: 0px;
+  background-color: #262222; /* Cor de fundo azul para o botão selecionado */
   color: #fff; /* Cor do texto branco para o botão selecionado */
+}
+
+
+::marker{
+  display: none;
 }
