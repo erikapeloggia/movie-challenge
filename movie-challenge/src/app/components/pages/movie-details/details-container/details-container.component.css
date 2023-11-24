@@ -1,0 +1,22 @@
+*{
+  margin: 0px;
+  padding: 0px;
+  background-color: #24364C;
+}
+
+.card-mb-3{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-areas: "poster overview";
+  border: solid orange;
+}
+
+.col-md-4{
+  display: grid;
+  grid-area: poster;
+}
+
+.col-md-8{
+  display: grid;
+  grid-area: overview;
+}
