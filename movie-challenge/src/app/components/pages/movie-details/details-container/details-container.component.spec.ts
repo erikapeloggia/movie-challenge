@@ -31,6 +31,7 @@ describe('DetailsContainerComponent', () => {
 
     });
     fixture = TestBed.createComponent(DetailsContainerComponent);
+    _SPINNER = TestBed.inject(NgxSpinnerService);
     component = fixture.componentInstance;
     component.movie = movie;
     fixture.detectChanges();
