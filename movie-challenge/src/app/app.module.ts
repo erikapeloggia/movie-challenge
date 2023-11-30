@@ -9,7 +9,7 @@ import { FooterComponent } from './components/commons/footer/footer.component';
 import { HomeModule } from './components/pages/home/home.module';
 import { MovieDetailsModule } from './components/pages/movie-details/movie-details.module';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-// import { NgxSpinnerModule } from 'ngx-spinner';
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 @NgModule({
   declarations: [
@@ -23,8 +23,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     HttpClientModule,
     HomeModule,
     MovieDetailsModule,
-    BrowserAnimationsModule
-    // NgxSpinnerModule
+    BrowserAnimationsModule,
+    NgxSpinnerModule
   ],
   schemas:[CUSTOM_ELEMENTS_SCHEMA],
   providers: [

@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { MovieDetailsRoutingModule } from './movie-details-routing.module';
@@ -19,6 +19,9 @@ import { NgxSpinnerModule } from 'ngx-spinner';
     CommonModule,
     MovieDetailsRoutingModule,
     NgxSpinnerModule
+  ],
+  schemas: [
+    CUSTOM_ELEMENTS_SCHEMA
   ],
   exports: [
     MovieDetailsComponent
