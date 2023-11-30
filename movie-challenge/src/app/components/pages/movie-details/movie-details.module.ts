@@ -18,7 +18,7 @@ import { NgxSpinnerModule } from 'ngx-spinner';
   imports: [
     CommonModule,
     MovieDetailsRoutingModule,
-    NgxSpinnerModule  //.forRoot({type: 'ball-clip-rotate'})
+    NgxSpinnerModule
   ],
   exports: [
     MovieDetailsComponent
