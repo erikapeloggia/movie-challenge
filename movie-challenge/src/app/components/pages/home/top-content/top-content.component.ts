@@ -1,13 +1,11 @@
-import { Component, Input, Output, EventEmitter, OnDestroy, OnInit } from '@angular/core';
-// import { Subject } from 'rxjs';
-// import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-top-content',
   templateUrl: './top-content.component.html',
   styleUrls: ['./top-content.component.css']
 })
-export class TopContentComponent  { //implements OnInit, OnDestroy
+export class TopContentComponent  {
   @Input() genres: any[] = [];
   @Input() orderBy: any[] = [];
   @Input() moviesByGenre: any[] = [];
@@ -31,11 +29,11 @@ export class TopContentComponent  { //implements OnInit, OnDestroy
       text: 'Earliest Release Date'
     },
     {
-      order: 'vote_average.desc', 
+      order: 'vote_count.desc', 
       text: 'Most Voted'
     },
     {
-      order: 'vote_average.asc', 
+      order: 'vote_count.asc', 
       text: 'Least Voted'
     },
   ]
@@ -44,74 +42,9 @@ export class TopContentComponent  { //implements OnInit, OnDestroy
   selectedOrder: string = this.orderByList[0].order;
   keyWord: string = '';
 
-  // defaultSelectedGenre: string = '0'; // Valor padrão para gênero
-  // defaultSelectedOrder: string = this.orderByList[0].order; // Valor padrão para ordenação
-  // defaultKeyWord: string = ''; // Campo de pesquisa vazio
-
-  // private searchTerms = new Subject<string>();
-
-  constructor(){
-    // this.searchTerms.pipe(
-    //   debounceTime(300),
-    //   distinctUntilChanged()
-    // ).subscribe(term => {
-    //   this.keyWord = term;
-    //   this.optionsChange();
-    // });
-  }
-  ngOnInit(): void {
-    // const storedGenre = localStorage.getItem('selectedGenre');
-    // const storedOrder = localStorage.getItem('selectedOrder');
-    // const storedKeyWord = localStorage.getItem('keyWord');
-
-    // if (storedGenre !== null) {
-    //   this.selectedGenre = storedGenre;
-    // }
-
-    // if (storedOrder !== null) {
-    //   this.selectedOrder = storedOrder;
-    // }
-
-    // if (storedKeyWord !== null) {
-    //   this.keyWord = storedKeyWord;
-    // }  
-
-    // const storedGenre = localStorage.getItem('selectedGenre');
-    // const storedOrder = localStorage.getItem('selectedOrder');
-    // const storedKeyWord = localStorage.getItem('keyWord');
-
-    // // Se os valores salvos forem null, restaura os valores padrão
-    // this.selectedGenre = storedGenre !== null ? storedGenre : this.defaultSelectedGenre;
-    // this.selectedOrder = storedOrder !== null ? storedOrder : this.defaultSelectedOrder;
-    // this.keyWord = storedKeyWord !== null ? storedKeyWord : this.defaultKeyWord;
-  }
-  ngOnDestroy(): void {
-    // Armazena os valores dos filtros no localStorage ao destruir o componente
-  // localStorage.setItem('selectedGenre', this.selectedGenre);
-  // localStorage.setItem('selectedOrder', this.selectedOrder);
-  // localStorage.setItem('keyWord', this.keyWord);
-  }
-
-  // clearFilters(): void {
-  //   // Reseta os filtros para os valores padrão
-  //   this.selectedGenre = this.defaultSelectedGenre;
-  //   this.selectedOrder = this.defaultSelectedOrder;
-  //   this.keyWord = this.defaultKeyWord;
-
-  //   // Emite o evento para notificar sobre a limpeza dos filtros
-  //   this.filterChanged.emit({
-  //     genreId: this.selectedGenre,
-  //     orderBy: this.selectedOrder,
-  //     keyWord: this.keyWord,
-  //   });
-  // }
-
-  // searchMovies(term: string): void {
-  //   this.searchTerms.next(term);
-  // }
+  constructor(){}
 
   optionsChange() {
-    console.log(`${this.selectedGenre} - ${this.selectedOrder}`);
     this.filterChanged.emit({
       genreId: this.selectedGenre,
       orderBy: this.selectedOrder,

@@ -22,16 +22,13 @@ export class MovieDetailsComponent implements OnInit{
     private readonly _SPINNER: NgxSpinnerService,
   ) {
     this._SPINNER.show();
-    // console.log('constructor')
   }
 
   ngOnInit(): void {
-    console.log(this._ROUTE.snapshot.queryParamMap.get('order'))
     this.genre = this._ROUTE.snapshot.queryParamMap.get('genre')?.toString();
     this.order = this._ROUTE.snapshot.queryParamMap.get('order')?.toString();
     this.pageNumber = this._ROUTE.snapshot.queryParamMap.get('pageNumber')?.toString();
     this.getMovieDetails()
-    // console.log('Init')
   }
 
   getMovieDetails(){
@@ -42,9 +39,7 @@ export class MovieDetailsComponent implements OnInit{
       setTimeout(() => {
         /** spinner ends after 5 seconds */
         this._SPINNER.hide();
-      }, 10); //5000
-      // console.log('data ', id);
-      // console.log(this.movie);
+      }, 1000);
     });
   }
 
