@@ -15,7 +15,7 @@ export class HomeComponent implements OnInit{
   orderBy: any[] = [];
   moviesByGenre: any[] = [];
   selectedGenre?: string;
-  selectedOrder: string = 'popularity.desc';
+  selectedOrder?: string = 'popularity.desc';
   keyWord?: string;  
 
   constructor(
@@ -25,28 +25,24 @@ export class HomeComponent implements OnInit{
   
   ngOnInit(): void {
     const queryParams = this._ROUTE.snapshot.queryParamMap;
-    const genreParam = queryParams.get('genre');
-    const orderParam = queryParams.get('order');
-    const pageNumberParam = queryParams.get('pageNumber');
-  
-    if (genreParam !== null) {
-      this.selectedGenre = genreParam.toString();
-    }
-  
-    if (orderParam !== null) {
-      this.selectedOrder = orderParam.toString();
-    }
-  
-    if (pageNumberParam !== null) {
-      const parsedPageNumber = parseInt(pageNumberParam, 10);
-      this.currentPage = isNaN(parsedPageNumber) ? 1 : parsedPageNumber;
+
+    if (
+      queryParams.get('genre') !== null &&
+      queryParams.get('order') !== null &&
+      queryParams.get('pageNumber') !== null
+      ) {
+
+        this.selectedGenre = queryParams.get('genre')?.toString();
+        this.selectedOrder = queryParams.get('order')?.toString();
+      
+        const pageNumberParam = queryParams.get('pageNumber')
+        this.currentPage = pageNumberParam !== null ? parseInt(pageNumberParam, 10) : 1;
     }
     this.loadMovies();
     this.genreList();
 }
 
 onPageChanged(page: number){
-  // console.log(page);
   this.currentPage = page;
   this.loadMovies();
 }
@@ -57,21 +53,8 @@ loadMovies() {
    this._SERVICE.getMoviesByPages(this.currentPage, filterGenre, this.selectedOrder, searchBy).subscribe(
     {
       next: (data: any) => {
-        console.log("Load movies: ", data);
         this.totalPages = data.total_pages;
         this.movies = data.results;
-      }
-    });
-}
-
-loadMoviesWithGenre() {
-  this._SERVICE.getMoviesByPages(this.currentPage, this.selectedGenre).subscribe(
-    {
-      next: (data: any) => {
-        console.log("Load With Genre: ", data);
-        this.totalPages = data.total_pages;
-        this.movies = data.results;
-        console.log(this.currentPage, this.selectedGenre);
       }
     });
 }
@@ -80,24 +63,12 @@ genreList() {
   this._SERVICE.getMoviesByGenre().subscribe({
     next: (data: any) => {
       this.genres = data.genres;
-      console.log('Movie List: ', data)
-    }
-  });
-}
-
-listMoviesOrder(sortBy: string) {
-  sortBy = sortBy || 'popularity.desc';
-  this._SERVICE.getMoviesByOrder(sortBy).subscribe({
-    next: (data: any) => {
-      console.log('Order: ', data);
-      this.orderBy = data.results;
     }
   });
 }
 
 
 filterChanged(event: { genreId: string, orderBy: string, keyWord: string }){
-  console.log("Filter Change Home: ", event);
   const { genreId, orderBy, keyWord } = event;
   this.selectedGenre = genreId;
   this.selectedOrder = orderBy;
@@ -105,61 +76,4 @@ filterChanged(event: { genreId: string, orderBy: string, keyWord: string }){
   this.loadMovies();
 }
 
-moviesWithGenre(genreId: string){
-  this._SERVICE.getSelectedGenre(genreId).subscribe({
-    next: (data:any)=>{
-      this.moviesByGenre = data.results;
-      console.log("Filmes filtrados por genero:", data);
-      this.totalPages = data.total_pages;
-      this.movies = data.results; 
-    }
-  })
 }
-
-}
-
-
-
-
-// selectGener(event:any){
-//   console.log(event);
-//   this.selectedGenre = Number(event);
-//   this.moviesWhithGenre(Number(event)); 
-// }
-
-// loadMovies(genreId?: string) {
-//   this._SERVICE.getMoviesByPages(this.currentPage, genreId).subscribe({
-//     next: (data: any) => {
-//       this.totalPages = data.total_pages;
-//       this.movies = data.results;
-//     }
-//   });
-// }
-
-// loadMovies(){
-//   this._SERVICE.getMoviesByPages(this.currentPage).subscribe(
-//     {
-//       next: (data: any) => {
-//       console.log(data);
-//       this.totalPages = data.total_pages;
-//       this.movies = data.results;
-//       }
-//     });
-// }
-
-// genreList(){
-//   this._SERVICE.getMoviesByGenre().subscribe({
-//       next: (data: any) => {
-//         this.genres = data.genres;
-//         console.log('Genres: ', data);
-//       }
-//     })
-// }
-// sortBy(sortBy: string){
-//   this._SERVICE.getMoviesByOrder(sortBy).subscribe({
-//       next: (data: any) => {
-//         this.orders = data.results;
-//         console.log('Order: ', data.sort_by);
-//       }
-//     })
-// }

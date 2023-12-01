@@ -6,10 +6,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   styleUrls: ['./pagination.component.css']
 })
 export class PaginationComponent {
-  // @Output() pageChange = new EventEmitter<number>();
-  // @Input() currentPage: number = 1;
-  // @Input() totalPages: number = 1;
-
+ 
   @Input() currentPage: number = 1;
   @Input() totalPages: number = 0;
   @Output() pageChanged = new EventEmitter<number>();
@@ -19,6 +16,13 @@ export class PaginationComponent {
 
   loadPage(page: number) {
     this.pageChanged.emit(page);
+  }
+
+  loadFirstPage() {
+    if (this.currentPage !== 1) {
+      this.currentPage = 1;
+      this.pageChanged.emit(this.currentPage);
+    }
   }
 
   loadPreviousPage(){
@@ -43,8 +47,4 @@ export class PaginationComponent {
   isSelectedPage(pageNumber: number): boolean {
     return pageNumber === this.currentPage;
   }
-
-  // loadLastPage() {
-  //   this.loadPage(this.totalPages);
-  // }
 }
