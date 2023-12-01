@@ -1,17 +1,18 @@
 *{
-  background-color:  #24364C;
   margin: 0;
   padding: 0;
-  height: 10vmin;
-  /* max-width: 80%; */
 }
 
-a{
-  color: white;
-}
-
-div{
+header{
   display: flex;
   align-items: center;
-  justify-content: center;
+  height: 13vmin;
+  background-color: #24364C;
+}
+
+
+.imgTitle{
+  margin-left: 5%;
+  width: 30vmin;
+  cursor: pointer;
 }

@@ -1,11 +1,12 @@
-<!-- <p>movie-details works!</p> -->
 <section>
   <app-top-content-details [genre]="genre" [order]="order" [pageNumber]="pageNumber"></app-top-content-details>
 </section>
 
-<section id="main" *ngIf="movieLoaded; else spinner">
+<section class="mainDetails" *ngIf="movieLoaded; else spinner">
   <app-details-container *ngIf='movie'[movie]="movie"></app-details-container>
 </section>
+
+<section class="gap"></section>
 
 <ng-template #spinner>
 </ng-template>

@@ -1,5 +1,7 @@
 *{
-  margin: 0;
-  padding: 0;
   background-color: #262222;
+}
+
+.gap{
+  padding: 40px 0px;
 }

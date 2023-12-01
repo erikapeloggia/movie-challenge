@@ -1,8 +1,52 @@
-/* *{
+*{
   margin: 0;
   padding: 0;
+  box-sizing: border-box; 
 }
 
-#back{
-  height: 10vh;
-} */
+.topContent{
+  padding: 3% 0% 1% 5.8%;
+}
+
+.backButton{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 2rem;
+  max-width: 17%;
+  background-color: #24364C;
+  border-radius: 0.5vmin;
+  margin-left: 15%;
+  overflow: hidden;
+}
+
+.backText{
+  text-decoration: none;
+  color: #f2f2f2;
+  font-size: 1rem;
+  font-weight: 600;
+  max-width: 90%;
+  max-height: 90%;
+}
+
+.material-symbols-outlined{
+  color: white;
+}
+
+a{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (max-width: 1024px) {
+
+  .backButton{
+    max-width: 90%;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: flex-start;
+    padding: 0px 10px;
+  }
+}

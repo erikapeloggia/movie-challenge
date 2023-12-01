@@ -1,43 +1,21 @@
-*{
-  margin: 0;
-  padding: 0;
-}
-
-nav{
+.pagination {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 10px;
-  /* border: solid green;  */
+  margin: 0;
+  padding: 20px 0px;
 }
 
-.pagination{
-  display: flex;
-  flex-direction: row;
-  /* border: solid red;  */
-}
-
-.page-item{
-  padding: 5px;
-  background-color: #24364C;
-  /* border: solid green; */
-}
-
-.page-link{
-  color: #f2f2f2;
-  background-color: #24364C;
-  cursor: pointer;
+.page-link {
+  background-color:  #24364C;
+  color: white;
+  font-weight: 500;
   border: none;
-  /* border: solid yellow; */
+  cursor: pointer;
 }
 
 .selected-page {
-  padding: 0px;
-  background-color: #262222; /* Cor de fundo azul para o botão selecionado */
-  color: #fff; /* Cor do texto branco para o botão selecionado */
-}
-
-
-::marker{
-  display: none;
+  background-color: #3C3838; 
+  color:#f2f2f2;
+  font-weight: 500; 
 }

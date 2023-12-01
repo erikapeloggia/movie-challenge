@@ -1,23 +1,39 @@
-<!-- <p>details-container works!</p> -->
 
-<div class="card-mb-3">
-  <div class="row g-0">
-    <div class="col-md-4" *ngIf="movie.poster_path; else noImage">
-      <img src="https://image.tmdb.org/t/p/w200/{{movie.poster_path}}" class="img-fluid rounded-start" alt="Film Poster">
+<div class="detailsContainer">
+  <div class="details">
+    
+    <div class="poster" *ngIf="movie.poster_path; else noImage">
+      <img src="https://image.tmdb.org/t/p/w200/{{movie.poster_path}}" class="" alt="Film Poster">
     </div>
+    
     <ng-template #noImage>
       <img class="notFound" src="assets/poster-not-found.png" alt="Sem poster">
     </ng-template>
-    <div class="col-md-8">
+    
+    <div class="sinopse">
       <div class="card-body">
-        <h5 class="card-title">{{movie.title}} ({{movie.release_date | date: 'yyyy'}})</h5>
-        <p>Directors: {{movie.directors}}</p>
-        <p>Genres: {{movie.genres[0].name}}, {{movie.genres[1].name}}</p>
-        <p class="card-text">{{movie.overview}}</p>
-        <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+        <h5 class="card-title">
+          <p>{{movie.title}} ({{movie.release_date | date: 'yyyy'}})</p>
+        </h5>
+        <p class="review">
+          <strong>
+            Review: 
+          </strong> 
+          {{ movie.vote_average | number:'1.1-1'}} | {{ movie.vote_count | number:'1.0-2'}} votes
+        </p>
+        <p class="genre">
+          <strong>
+            Genres: 
+          </strong> 
+          {{movie.genres[0].name}}, {{movie.genres[1].name}}
+        </p>
+        <p class="card-text">
+          <strong>
+            Overview: 
+          </strong>
+          {{movie.overview}}
+        </p>
       </div>
     </div>
   </div>
 </div>
-
-<!-- style="max-width: 540px;" -->

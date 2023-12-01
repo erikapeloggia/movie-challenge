@@ -1,22 +1,64 @@
 *{
-  margin: 0px;
-  padding: 0px;
-  background-color: #24364C;
+  border-radius: 0.5vmin;
 }
 
-.card-mb-3{
+.detailsContainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.details{
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  grid-template-areas: "poster overview";
-  border: solid orange;
+  grid-template-columns: 200px, 1fr;
+  /* grid-template-rows: auto auto; */
+  grid-template-areas: "poster title";
+  background-color: #24364C;
+  width: 125vh;
 }
 
-.col-md-4{
+.poster{
   display: grid;
   grid-area: poster;
+  padding: 20px;
+  width: 10%;
+  border-radius: 1vmin;
 }
 
-.col-md-8{
-  display: grid;
-  grid-area: overview;
+.notFound{
+  height: 20rem;
+  width: auto;
+  padding: 10px;
 }
+
+.sinopse{
+  color: #f2f2f2;
+  padding: 10px 20px;
+  text-align: justify;
+}
+
+
+@media screen and (max-width: 1024px) {
+  
+  .details {
+    max-width: 90%;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+/* .card-title{
+  display: grid;
+  grid-area: title;
+} */
+
+/* .review, .genre{
+  flex-wrap: nowrap;
+} */
+
+/* {
+  display: grid;
+  grid-area: genre;
+  flex-wrap: nowrap;
+} */
+

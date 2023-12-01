@@ -1,11 +1,11 @@
-<div>
+<section>
   <app-top-content [genres]="genres" [orderBy]="orderBy" (filterChanged)="filterChanged($event)"></app-top-content>
-</div>
+</section>
 
-<div id="main">
+<section>
   <app-movie-container [movies]="movies" [genre]="selectedGenre" [order]="selectedOrder" [pageNumber]="currentPage.toString()"></app-movie-container>
-</div>
+</section>
 
-<div id="footerr">
+<section>
   <app-pagination [currentPage]="currentPage" [totalPages]="totalPages" (pageChanged)="onPageChanged($event)"></app-pagination>
-</div>
+</section>

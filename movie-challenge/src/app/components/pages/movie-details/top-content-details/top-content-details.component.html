@@ -1,5 +1,15 @@
-<!-- <p>top-content-details works!</p> -->
-<div id="back">
-  <a routerLink="/" [queryParams]="{genre:genre, order:order, pageNumber:pageNumber}">BACK TO THE MOVIE LIST</a>
+<head>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+</head>
+
+<div class="topContent">
+  <div class="backButton">
+    <a routerLink="/" class="backText" [queryParams]="{genre:genre, order:order, pageNumber:pageNumber}">
+      <span class="material-symbols-outlined">arrow_back_ios</span>
+    </a>
+    <a routerLink="/" class="backText" [queryParams]="{genre:genre, order:order, pageNumber:pageNumber}">
+      BACK TO THE MOVIE LIST
+    </a>
+  </div>
 </div>
 
